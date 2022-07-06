@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registrar na lista de Alunos{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="card auth-card">
+            <div class="card-body">
+                 <h4 class="card-title text-center">Registrar na lista de Alunos</h4>
+
+                    <form method="POST">
+                     {% csrf_token %}
+                     <input type="hidden" name="next" value="{{ next }}">
+                     
+                     {{ form|crispy }}
+                     <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                 </form>
+
+                 <p class="change-form-p">Já possui uma conta?<a href="/accounts/login">Clique Aqui!</a></p>
+            </div>
+        </div>
+    </div>    
+</div>
+{% endblock %}
+
