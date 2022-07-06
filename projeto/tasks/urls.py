@@ -1,6 +1,4 @@
 from django.urls import path
-
-#from projeto.tasks.models import task
 from . import views
 
 urlpatterns = [
